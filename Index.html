@@ -1,149 +1,436 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dolores Muñoz - Currículum</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css"/>
-  </head>
-  <body>
-    <!-- Reemplazar el contenido actual del header con este código -->
-<header>
-    <div class="container">
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Dolores Muñoz Vázquez</h1>
-                <p>Oficial I de la Coordinación General de Ingresos de la Subsecretaría de Ingresos</p>
-            </div>
-            <div class="profile-image">
-                <img src="source.png" alt="Foto de Dolores Muñoz">
-            </div>
-        </div>
-    </div>
-</header>
-    <div class="container">
-      <section class="personal-info">
-        <h2>Información Personal</h2>
-        <div class="info-grid">
-          <div class="info-item">
-            <span class="info-label">Fecha de Nacimiento:</span> 02 de Enero de
-            1975 (50 años)
-          </div>
-          <div class="info-item">
-            <span class="info-label">Nacionalidad:</span> Mexicana
-          </div>
-        </div>
-      </section>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #0a1d37;
+            --intense-blue: #1e3c72;
+            --bright-blue: #2a5298;
+            --turquoise: #009dff;
+            --light-gray: #e5e9f0;
+            --accent-red: #ff4c4c;
+        }
 
-      <section class="section">
-        <h2>Experiencia Laboral</h2>
-        <div class="experience-grid">
-          <div class="experience-item">
-            <div class="date-range">marzo 2005 - mayo 2023</div>
-            <div class="institution">
-              Secretaría de Planeación y Finanzas del Gobierno del Estado de
-              Puebla
-            </div>
-            <div class="position">
-              Analista de la Unidad de Enlace de la Subsecretaría de Ingresos
-            </div>
-            <div class="field">
-              Recursos Financieros de la Subsecretaría de ingresos de la
-              Secretaría de Planeación y Finanzas
-            </div>
-          </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-          <div class="experience-item">
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #001f3e;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--dark-blue);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--turquoise);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--intense-blue) 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .header-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, white, var(--light-gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--light-gray);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Secciones comunes */
+        h2 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--turquoise);
+            padding-bottom: 10px;
+            margin: 30px 0 20px;
+            color: var(--dark-blue);
+        }
+
+        .personal-info, .section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* Grids */
+        .info-grid, .courses-grid, .proposals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: var(--intense-blue);
+        }
+
+        /* Experiencia */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .experience-item {
+            border-left: 3px solid var(--bright-blue);
+            padding-left: 20px;
+        }
+
+        .date-range {
+            color: var(--turquoise);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            font-weight: bold;
+            color: var(--intense-blue);
+            margin-bottom: 5px;
+        }
+
+        .position {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .activities {
+            margin-top: 15px;
+        }
+
+        .activities ul {
+            list-style-type: none;
+        }
+
+        .activities li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .activities li:before {
+            content: "•";
+            color: var(--turquoise);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Propuestas */
+        .proposal-item {
+            background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--turquoise);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proposal-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .proposal-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .proposal-item h3 {
+            color: var(--intense-blue);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
             
-            <div class="institution">
-              Secretaría de Gobernación del Gobierno del Estado de Puebla
-            </div>
-            <div class="position">
-              Encargada de Organismos Públicos Descentralizados
-            </div>
-            <div class="field">Titular</div>
+            .header-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .info-grid, .courses-grid, .proposals-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .navbar .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Dolores Muñoz</div>
+            <ul class="nav-links">
+                <li><a href="#personal">Información Personal</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#formacion">Formación</a></li>
+                <li><a href="#propuestas">Propuestas</a></li>
+            </ul>
+        </div>
+    </nav>
 
-            <div class="activities">
-              <ul>
-                <li>
-                  Participación en juntas de gobierno de los organismos públicos
-                  descentralizados para la instalación de los comités y
-                  subcomités y control de los OPDS
-                </li>
-                <li>
-                  Revisión de proyectos de creación, revisión de estados
-                  financieros
-                </li>
-                <li>Control de la agenda de juntas de gobierno</li>
-              </ul>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h3>Prestaciones, Innovación, Justicia e Igualdad</h3>
+                    <h1>RECONSTRUCCIÓN SINDICAL</h1>
+                    <p style="font-size: 16px;">Juntos por el cambio verdadero!</p>
+                </div>
+                <div class="profile-image">
+                    <img src="source.png" alt="Foto de Dolores Muñoz">
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </header>
 
-      <section class="section">
-        <h2>Formación Académica</h2>
-        <div class="info-grid">
-          <div class="info-item">
-            <span class="info-label">Nivel Técnico:</span> Lenguas extranjeras
-            (Inglés)
-          </div>
-          <div class="info-item">
-            <span class="info-label">Licenciatura:</span> Contaduría Pública
-          </div>
-          <div class="info-item">
-            <span class="info-label">Maestría:</span> Maestría en Administración
-          </div>
-          <div class="info-item">
-            <span class="info-label">Doctorado:</span> Doctorado en
-            Administración Pública (en proceso de titulación)
-          </div>
-          <div class="info-item">
-            <span class="info-label">Doctorante:</span> Ciencias Jurídicas,
-            Política y Gobierno
-          </div>
-        </div>
-      </section>
-      <!-- Agregar después de la sección de Cursos y Capacitaciones -->
-<section class="section">
-    <h2>Propuestas Sindicales</h2>
-    <div class="proposals-grid">
-        <div class="proposal-item">
-            <div class="proposal-icon">🎓</div>
-            <h3>Titulación por experiencia laboral (Acuerdo 286 de la SEP)</h3>
-            <p>Promover, en coordinación con las autoridades educativas correspondientes, que los compañeros sindicalizados puedan obtener un título de licenciatura mediante la validación de saberes adquiridos a través de la experiencia laboral, conforme al Acuerdo 286 emitido por la Secretaría de Educación Pública (SEP).</p>
-        </div>
-        
-        <div class="proposal-item">
-            <div class="proposal-icon">📈</div>
-            <h3>Acceso a puestos directivos para personal con preparación académica de Maestría y Doctorado</h3>
-            <p>Impulsar ante las instancias competentes la promoción del personal sindicalizado que cuente con el perfil académico, profesional y laboral necesario, para que puedan aspirar y ser considerados en procesos de selección para ocupar puestos directivos dentro de la administración pública estatal.</p>
-        </div>
-        
-        <div class="proposal-item">
-            <div class="proposal-icon">💰</div>
-            <h3>Reconocimiento documental y económico por la formación académica</h3>
-            <p>Proponer que se otorgue un reconocimiento formal y económico a los trabajadores sindicalizados que hayan alcanzado niveles superiores de formación académica, con el fin de incentivar el desarrollo profesional y valorar la preparación continua del personal.</p>
-        </div>
-        
-        <div class="proposal-item">
-            <div class="proposal-icon">🏠</div>
-            <h3>Otorgamiento de vivienda al personal sindicalizado</h3>
-            <p>Gestionar ante las autoridades estatales y organismos de vivienda, programas y mecanismos que permitan facilitar el acceso a vivienda digna para el personal sindicalizado, ya sea mediante subsidios, créditos preferenciales o participación en proyectos habitacionales.</p>
-        </div>
-    </div>
-</section>
+    <div class="container">
+        <!-- Información Personal -->
+        <section id="personal" class="personal-info">
+            <h2>Información Personal</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Fecha de Nacimiento:</span> 02 de Enero de 1975 (50 años)
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Nacionalidad:</span> Mexicana
+                </div>
+            </div>
+        </section>
 
+        <!-- Experiencia Laboral -->
+        <section id="experiencia" class="section">
+            <h2>Experiencia Laboral</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <div class="date-range">marzo 2005 - mayo 2023</div>
+                    <div class="institution">
+                        Secretaría de Planeación y Finanzas del Gobierno del Estado de Puebla
+                    </div>
+                    <div class="position">
+                        Analista de la Unidad de Enlace de la Subsecretaría de Ingresos
+                    </div>
+                    <div class="field">
+                        Recursos Financieros de la Subsecretaría de ingresos de la Secretaría de Planeación y Finanzas
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="institution">
+                        Secretaría de Gobernación del Gobierno del Estado de Puebla
+                    </div>
+                    <div class="position">
+                        Encargada de Organismos Públicos Descentralizados
+                    </div>
+                    <div class="field">Titular</div>
+
+                    <div class="activities">
+                        <ul>
+                            <li>
+                                Participación en juntas de gobierno de los organismos públicos
+                                descentralizados para la instalación de los comités y
+                                subcomités y control de los OPDS
+                            </li>
+                            <li>
+                                Revisión de proyectos de creación, revisión de estados
+                                financieros
+                            </li>
+                            <li>Control de la agenda de juntas de gobierno</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formación Académica -->
+        <section id="formacion" class="section">
+            <h2>Formación Académica</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Nivel Técnico:</span> Lenguas extranjeras (Inglés)
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Licenciatura:</span> Contaduría Pública
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Maestría:</span> Maestría en Administración
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Doctorado:</span> Doctorado en Administración Pública (en proceso de titulación)
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Doctorante:</span> Ciencias Jurídicas, Política y Gobierno
+                </div>
+            </div>
+        </section>
+
+        <!-- Propuestas Sindicales -->
+        <section id="propuestas" class="section">
+            <h2>Propuestas Sindicales</h2>
+            <div class="proposals-grid">
+                <div class="proposal-item">
+                    <div class="proposal-icon">🎓</div>
+                    <h3>Titulación por experiencia laboral (Acuerdo 286 de la SEP)</h3>
+                    <p>Promover, en coordinación con las autoridades educativas correspondientes, que los compañeros sindicalizados puedan obtener un título de licenciatura mediante la validación de saberes adquiridos a través de la experiencia laboral, conforme al Acuerdo 286 emitido por la Secretaría de Educación Pública (SEP).</p>
+                </div>
+                
+                <div class="proposal-item">
+                    <div class="proposal-icon">📈</div>
+                    <h3>Acceso a puestos directivos para personal con preparación académica de Maestría y Doctorado</h3>
+                    <p>Impulsar ante las instancias competentes la promoción del personal sindicalizado que cuente con el perfil académico, profesional y laboral necesario, para que puedan aspirar y ser considerados en procesos de selección para ocupar puestos directivos dentro de la administración pública estatal.</p>
+                </div>
+                
+                <div class="proposal-item">
+                    <div class="proposal-icon">💰</div>
+                    <h3>Reconocimiento documental y económico por la formación académica</h3>
+                    <p>Proponer que se otorgue un reconocimiento formal y económico a los trabajadores sindicalizados que hayan alcanzado niveles superiores de formación académica, con el fin de incentivar el desarrollo profesional y valorar la preparación continua del personal.</p>
+                </div>
+                
+                <div class="proposal-item">
+                    <div class="proposal-icon">🏠</div>
+                    <h3>Otorgamiento de vivienda al personal sindicalizado</h3>
+                    <p>Gestionar ante las autoridades estatales y organismos de vivienda, programas y mecanismos que permitan facilitar el acceso a vivienda digna para el personal sindicalizado, ya sea mediante subsidios, créditos preferenciales o participación en proyectos habitacionales.</p>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer>
-      <div class="container">
-        <p>Dolores Muñoz Vázquez - Síntesis Curricular</p>
-      </div>
+        <div class="container">
+            <p>Dolores Muñoz Vázquez - Síntesis Curricular</p>
+        </div>
     </footer>
-  </body>
+</body>
 </html>
