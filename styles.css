@@ -564,6 +564,15 @@
                 position: relative;
             }
 
+        .logo {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
             .nav-links {
                 position: absolute;
                 top: 100%;
