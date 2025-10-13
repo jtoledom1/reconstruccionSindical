@@ -1,436 +1,868 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dolores Muñoz - Currículum</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --dark-blue: #0a1d37;
-            --intense-blue: #1e3c72;
-            --bright-blue: #2a5298;
-            --turquoise: #009dff;
-            --light-gray: #e5e9f0;
-            --accent-red: #ff4c4c;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dolores Muñoz - Reconstrucción Sindical</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="LOGO (1).png">
+    </head>
 
-        body {
-            font-family: "Roboto", sans-serif;
-            background-color: #001f3e;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: var(--dark-blue);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--turquoise);
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--intense-blue) 100%);
-            color: white;
-            padding: 60px 0;
-            margin-bottom: 30px;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-align: left;
-        }
-
-        .header-text h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(to right, white, var(--light-gray));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .header-text p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid var(--light-gray);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            flex-shrink: 0;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Secciones comunes */
-        h2 {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--turquoise);
-            padding-bottom: 10px;
-            margin: 30px 0 20px;
-            color: var(--dark-blue);
-        }
-
-        .personal-info, .section {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            margin-bottom: 30px;
-        }
-
-        /* Grids */
-        .info-grid, .courses-grid, .proposals-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .info-item {
-            margin-bottom: 15px;
-        }
-
-        .info-label {
-            font-weight: bold;
-            color: var(--intense-blue);
-        }
-
-        /* Experiencia */
-        .experience-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .experience-item {
-            border-left: 3px solid var(--bright-blue);
-            padding-left: 20px;
-        }
-
-        .date-range {
-            color: var(--turquoise);
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .institution {
-            font-weight: bold;
-            color: var(--intense-blue);
-            margin-bottom: 5px;
-        }
-
-        .position {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        .activities {
-            margin-top: 15px;
-        }
-
-        .activities ul {
-            list-style-type: none;
-        }
-
-        .activities li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .activities li:before {
-            content: "•";
-            color: var(--turquoise);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Propuestas */
-        .proposal-item {
-            background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--turquoise);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .proposal-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .proposal-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .proposal-item h3 {
-            color: var(--intense-blue);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-blue);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-            
-            .header-text h1 {
-                font-size: 2.2rem;
-            }
-            
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .info-grid, .courses-grid, .proposals-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .navbar .container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .nav-links li {
-                margin: 0 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Dolores Muñoz</div>
-            <ul class="nav-links">
-                <li><a href="#personal">Información Personal</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#formacion">Formación</a></li>
-                <li><a href="#propuestas">Propuestas</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="header-text">
-                    <h3>Prestaciones, Innovación, Justicia e Igualdad</h3>
-                    <h1>RECONSTRUCCIÓN SINDICAL</h1>
-                    <p style="font-size: 16px;">Juntos por el cambio verdadero!</p>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="LOGO (1).png" alt="Logo Dolores Muñoz"
+                        style="width: 1.8rem; height: 1.8rem;">
+                    <span>Reconstrucción Sindical</span>
                 </div>
-                <div class="profile-image">
-                    <img src="logo.jpeg" alt="Foto de Dolores Muñoz">
-                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"
+                    aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#personal">Información Personal</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#formacion">Formación</a></li>
+                    <li><a href="#propuestas">Propuestas</a></li>
+                    <li><a href="#contacto" class="cta-button">Contacto</a></li>
+                </ul>
             </div>
-        </div>
-    </header>
+        </nav>
 
-    <div class="container">
-        <!-- Información Personal -->
-        <section id="personal" class="personal-info">
-            <h2>Información Personal</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <span class="info-label">Fecha de Nacimiento:</span> 02 de Enero de 1975 (50 años)
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Nacionalidad:</span> Mexicana
-                </div>
-            </div>
-        </section>
-
-        <!-- Experiencia Laboral -->
-        <section id="experiencia" class="section">
-            <h2>Experiencia Laboral</h2>
-            <div class="experience-grid">
-                <div class="experience-item">
-                    <div class="date-range">marzo 2005 - mayo 2023</div>
-                    <div class="institution">
-                        Secretaría de Planeación y Finanzas del Gobierno del Estado de Puebla
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-content fade-in">
+                    <div class="header-text">
+                        <h3> RENOVANDO VALORES:
+                            "PRESTACIONES, IGUALDAD Y JUSTICIA"</h3>
+                        <h1>DOLORES MUÑOZ VAZQUEZ</h1>
+                        <p>Mujer orgullosamente sindicalizada,con <strong>20
+                                años de servicio</strong> , madre, valiente,
+                            resiliente y persistente en la búsqueda de
+                            alternativas que permitan brindar mejores
+                            condiciones
+                            de vida a la sociedad.</p>
+                        <a href="#propuestas" class="cta-button">Conoce mis
+                            propuestas</a>
                     </div>
-                    <div class="position">
-                        Analista de la Unidad de Enlace de la Subsecretaría de Ingresos
-                    </div>
-                    <div class="field">
-                        Recursos Financieros de la Subsecretaría de ingresos de la Secretaría de Planeación y Finanzas
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="institution">
-                        Secretaría de Gobernación del Gobierno del Estado de Puebla
-                    </div>
-                    <div class="position">
-                        Encargada de Organismos Públicos Descentralizados
-                    </div>
-                    <div class="field">Titular</div>
-
-                    <div class="activities">
-                        <ul>
-                            <li>
-                                Participación en juntas de gobierno de los organismos públicos
-                                descentralizados para la instalación de los comités y
-                                subcomités y control de los OPDS
-                            </li>
-                            <li>
-                                Revisión de proyectos de creación, revisión de estados
-                                financieros
-                            </li>
-                            <li>Control de la agenda de juntas de gobierno</li>
-                        </ul>
+                    <div class="profile-image">
+                        <img src="logo.jpeg" alt="Foto de Dolores Muñoz">
                     </div>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <!-- Formación Académica -->
-        <section id="formacion" class="section">
-            <h2>Formación Académica</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <span class="info-label">Nivel Técnico:</span> Lenguas extranjeras (Inglés)
+        <main>
+            <!-- Información Personal -->
+            <section id="personal" class="py-5 bg-light">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <h2>Información Personal</h2>
+                        <p class="text-muted">Detalles sobre mi trayectoria y
+                            experiencia</p>
+                    </div>
+                    <div class="row g-4">
+                        <!-- Tarjeta 1: Año de Nacimiento -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card personal-card shadow-sm border-0">
+                                <div class="card-body text-center p-4">
+                                    <i
+                                        class="fas fa-birthday-cake info-icon text-primary"></i>
+                                    <h5 class="info-label">Fecha de
+                                        Nacimiento</h5>
+                                    <p class="info-value">1975</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 2: Nacionalidad -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card personal-card shadow-sm border-0">
+                                <div class="card-body text-center p-4">
+                                    <i
+                                        class="fas fa-flag info-icon text-success"></i>
+                                    <h5 class="info-label">Nacionalidad</h5>
+                                    <p class="info-value">Mexicana</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 3: Experiencia Sindical -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card personal-card shadow-sm border-0">
+                                <div class="card-body text-center p-4">
+                                    <i
+                                        class="fas fa-user-tie info-icon text-warning"></i>
+                                    <h5 class="info-label">Antigüedad
+                                        Sindical</h5>
+                                    <p class="info-value">14 años</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 4: Años de Servicio -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card personal-card shadow-sm border-0">
+                                <div class="card-body text-center p-4">
+                                    <i
+                                        class="fas fa-user-tie info-icon text-info"></i>
+                                    <h5 class="info-label">Años de Servicio</h5>
+                                    <p class="info-value">20 años</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <span class="info-label">Licenciatura:</span> Contaduría Pública
+            </section>
+            <!-- Experiencia Laboral -->
+            <section id="experiencia" style="background-color: #f0f5ff;">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Experiencia Laboral</h2>
+                    </div>
+                    <div class="experience-grid">
+                        <div class="experience-item fade-in">
+                            <div class="date-range">Marzo 2005 - a la fecha
+                            </div>
+                            <div class="institution">
+                                Secretaría de Planeación y Finanzas del Gobierno
+                                del Estado de Puebla
+                            </div>
+                            <div class="position">
+                                Analista de Recursos Financieros de la Unidad de
+                                Enlace de la Subsecretaría de Ingresos
+                            </div>
+                            <div class="field">
+                                <strong>Función principal:</strong> Planeación,
+                                organización, ejercicio y control del
+                                presupuesto de egresos
+                            </div>
+                        </div>
+
+                        <div class="experience-item fade-in">
+                            <div class="date-range">Enero - noviembre 2018</div>
+                            <div class="institution">
+                                Secretaría de Crédito y Vivienda del Sindicato
+                            </div>
+                            <div class="field">
+                                <strong>Función principal:</strong>
+                                Acompañamiento y asesoría a los derechohabientes
+                                en la
+                                gestión de créditos hipotecarios y personales
+                            </div>
+                        </div>
+
+                        <div class="experience-item fade-in">
+                            <div class="date-range">Febrero - abril
+                                2019</div>
+                            <div class="institution">
+                                Encargada de despacho de la Junta auxiliar de
+                                San Sebastián de Aparicio
+                            </div>
+                        </div>
+
+                        <div class="experience-item fade-in">
+                            <div class="date-range">Marzo 2019 - Mayo 2020</div>
+                            <div class="institution">
+                                Secretaría de Gobernación del Gobierno del
+                                Estado de Puebla
+                            </div>
+                            <div class="position">
+                                Encargada de Organismos Públicos
+                                Descentralizados
+                            </div>
+                            <div class="field">
+                                <strong>Función principal:</strong>
+                                Participación en juntas de gobierno para la
+                                instalación
+                                de los comités y subcomités y control de los
+                                OPDS, así como, revisión de proyectos de
+                                creación, de estados financieros y control de la
+                                agenda de juntas de gobierno
+                            </div>
+                        </div>
+
+                        <div class="experience-item fade-in">
+                            <div class="date-range">marzo 2025 -
+                                actualidad</div>
+                            <div class="institution">
+                                Secretaría de Planeación, Finanzas y
+                                Administración del Gobierno del Estado de Puebla
+                            </div>
+                            <div class="position">
+                                Analista de Recursos Financieros de la Unidad de
+                                Enlace de la Subsecretaría de Ingresos
+                            </div>
+                            <div class="field">
+                                <strong>Función principal:</strong> Planeación,
+                                organización, ejercicio y control del
+                                presupuesto de egresos
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <span class="info-label">Maestría:</span> Maestría en Administración
+            </section>
+
+            <!-- Formación Académica -->
+            <section id="formacion">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Formación Académica</h2>
+                    </div>
+                    <div class="section-subtitle">
+                        Comprometida con la educación continua y el desarrollo
+                        profesional
+                    </div>
+                    <div class="info-grid">
+                        <div class="card fade-in">
+                            <div class="card-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3>Benemérita Universidad Autónoma de Puebla</h3>
+                            <p><strong>Nivel Técnico:</strong> Lenguas
+                                extranjeras (inglés)</p>
+                        </div>
+
+                        <div class="card fade-in">
+                            <div class="card-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3>Universidad Popular Autónoma del Estado de
+                                Puebla</h3>
+                            <p><strong>Licenciatura:</strong> Contaduría
+                                Pública</p>
+                        </div>
+
+                        <div class="card fade-in">
+                            <div class="card-icon">
+                                <i class="fas fa-scroll"></i>
+                            </div>
+                            <h3>Universidad Popular Autónoma del Estado de
+                                Puebla</h3>
+                            <p><strong>Maestría:</strong> Maestría en
+                                Administración</p>
+                        </div>
+
+                        <div class="card fade-in">
+                            <div class="card-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>Instituto de Administración Pública del Estado
+                                de Puebla</h3>
+                            <p><strong>Doctorado:</strong> Doctorado en
+                                Administración Pública (en proceso de
+                                titulación)
+                            </p>
+                        </div>
+
+                        <div class="card fade-in">
+                            <div class="card-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h3>Universidad Popular Autónoma del Estado de
+                                Puebla</h3>
+                            <p><strong>Doctorante:</strong> Ciencias Jurídicas,
+                                Política y Gobierno</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <span class="info-label">Doctorado:</span> Doctorado en Administración Pública (en proceso de titulación)
+            </section>
+
+                        <section class="bg-light py-5">
+                <div class="container">
+                    <!-- Encabezado -->
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-10 text-center">
+                            <span
+                                class="badge bg-primary mb-3 fs-6 px-3 py-2">61
+                                Años de Servicio Sindical</span>
+                            <h2
+                                class="display-5 fw-bold text-dark mb-3">PRINCIPIOS
+                                ESTATUTARIOS</h2>
+                            <p class="lead text-muted">Reconstrucción Sindical -
+                                Cercanía Real, Resultados Justos</p>
+                            <div
+                                class="border-top border-primary w-25 mx-auto my-4"></div>
+                            <p
+                                class="text-dark fst-italic">"Por nuestros principios y valores sindicales"</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Primera columna - Actualización normativa -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div
+                                    class="card-header bg-primary text-white py-3">
+                                    <h5 class="card-title mb-0"><i
+                                            class="bi bi-file-earmark-text me-2"></i>Actualización
+                                        Normativa</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <span
+                                                class="badge bg-primary rounded-circle p-2">1</span>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-dark mb-1">Nuevos
+                                                Estatutos Internos</h6>
+                                            <p class="text-muted small">Convocar
+                                                mesas de trabajo para elaborar
+                                                estatutos que regulen nuestra
+                                                convivencia y vida sindical
+                                                actual.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <span
+                                                class="badge bg-primary rounded-circle p-2">2</span>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-dark mb-1">Nueva Ley
+                                                Laboral</h6>
+                                            <p class="text-muted small">Elaborar
+                                                proyecto de ley que contemple
+                                                derechos y obligaciones acordes
+                                                a nuestra realidad laboral.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <span
+                                                class="badge bg-primary rounded-circle p-2">3</span>
+                                        </div>
+                                        <div>
+                                            <h6
+                                                class="text-dark mb-1">Reglamento
+                                                Transparente</h6>
+                                            <p class="text-muted small">Convocar
+                                                mesas con los tres poderes para
+                                                transparentar procesos de
+                                                escalafón y comisión mixta.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Segunda columna - Derechos laborales -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div
+                                    class="card-header bg-primary text-white py-3">
+                                    <h5 class="card-title mb-0"><i
+                                            class="bi bi-briefcase me-2"></i>Derechos
+                                        Laborales</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i
+                                                class="bi bi-currency-dollar text-primary fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <h6
+                                                class="text-dark mb-1">Retribución
+                                                Justa</h6>
+                                            <p class="text-muted small">Exigir
+                                                respeto a nuestra ley y
+                                                condiciones generales de
+                                                trabajo.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i
+                                                class="bi bi-house text-primary fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <h6
+                                                class="text-dark mb-1">Vivienda</h6>
+                                            <p
+                                                class="text-muted small">Otorgamiento
+                                                de vivienda al personal
+                                                sindicalizado.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i
+                                                class="bi bi-graph-up text-primary fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-dark mb-1">Escalafón
+                                                Garantizado</h6>
+                                            <p
+                                                class="text-muted small">Establecer
+                                                un sistema que garantice la
+                                                permanencia en tu trabajo.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <i
+                                                class="bi bi-award text-primary fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <h6
+                                                class="text-dark mb-1">Titulación
+                                                por Experiencia</h6>
+                                            <p
+                                                class="text-muted small">Reconocimiento
+                                                académico mediante el Acuerdo
+                                                286 de la SEP.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tercera columna - Desarrollo profesional -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div
+                                    class="card-header bg-primary text-white py-3">
+                                    <h5 class="card-title mb-0"><i
+                                            class="bi bi-person-badge me-2"></i>Desarrollo
+                                        Profesional</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i
+                                                class="bi bi-mortarboard text-primary fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <h6
+                                                class="text-dark mb-1">Reconocimiento
+                                                Académico</h6>
+                                            <p
+                                                class="text-muted small">Reconocimiento
+                                                documental y económico por la
+                                                formación académica.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i
+                                                class="bi bi-person-gear text-primary fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-dark mb-1">Acceso a
+                                                Puestos Directivos</h6>
+                                            <p class="text-muted small">Para
+                                                personal con preparación de
+                                                licenciatura, maestría y
+                                                doctorado.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i
+                                                class="bi bi-clock text-primary fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-dark mb-1">Jornada
+                                                Equitativa</h6>
+                                            <p
+                                                class="text-muted small">Representación
+                                                sindical cercana que defienda
+                                                tus derechos laborales.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <i
+                                                class="bi bi-people text-primary fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <h6
+                                                class="text-dark mb-1">Representación
+                                                Sindical</h6>
+                                            <p class="text-muted small">Ejercer
+                                                una verdadera representación
+                                                cercana a los trabajadores.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cuarta columna - Asistencia médica -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div
+                                    class="card-header bg-primary text-white py-3">
+                                    <h5 class="card-title mb-0"><i
+                                            class="bi bi-heart-pulse me-2"></i>Asistencia
+                                        Médica</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="d-flex mb-3">
+                                                <div class="me-3">
+                                                    <i
+                                                        class="bi bi-clipboard-check text-primary"></i>
+                                                </div>
+                                                <div>
+                                                    <h6
+                                                        class="text-dark mb-1">Atención
+                                                        Oportuna</h6>
+                                                    <p
+                                                        class="text-muted small">Representación
+                                                        sindical ante el
+                                                        I.S.S.S.T.E.P.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex mb-3">
+                                                <div class="me-3">
+                                                    <i
+                                                        class="bi bi-hospital text-primary"></i>
+                                                </div>
+                                                <div>
+                                                    <h6
+                                                        class="text-dark mb-1">Convenios
+                                                        de Colaboración</h6>
+                                                    <p
+                                                        class="text-muted small">Con
+                                                        hospitales de alta
+                                                        especialidad.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="d-flex mb-3">
+                                                <div class="me-3">
+                                                    <i
+                                                        class="bi bi-capsule text-primary"></i>
+                                                </div>
+                                                <div>
+                                                    <h6
+                                                        class="text-dark mb-1">Medicamentos
+                                                        Especializados</h6>
+                                                    <p
+                                                        class="text-muted small">Vigilancia
+                                                        de existencia de
+                                                        medicamentos.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <div class="me-3">
+                                                    <i
+                                                        class="bi bi-person-check text-primary"></i>
+                                                </div>
+                                                <div>
+                                                    <h6
+                                                        class="text-dark mb-1">Personal
+                                                        Comprometido</h6>
+                                                    <p
+                                                        class="text-muted small">Representación
+                                                        sindical efectiva.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quinta columna - Valores -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div
+                                    class="card-header bg-primary text-white py-3">
+                                    <h5 class="card-title mb-0"><i
+                                            class="bi bi-star me-2"></i>Nuestros
+                                        Valores</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted mb-4">Regirnos bajo
+                                        principios éticos que garanticen un
+                                        trato igualitario, incluyente y
+                                        humano.</p>
+
+                                    <div class="row g-3">
+                                        <div class="col-sm-4">
+                                            <div
+                                                class="p-3 bg-primary bg-opacity-10 rounded text-center border border-primary border-opacity-25">
+                                                <i
+                                                    class="bi bi-people fs-4 text-primary mb-2 d-block"></i>
+                                                <h6
+                                                    class="text-dark mb-0">IGUALDAD</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div
+                                                class="p-3 bg-primary bg-opacity-10 rounded text-center border border-primary border-opacity-25">
+                                                <i
+                                                    class="bi bi-hand-thumbs-up fs-4 text-primary mb-2 d-block"></i>
+                                                <h6
+                                                    class="text-dark mb-0">RESPETO</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div
+                                                class="p-3 bg-primary bg-opacity-10 rounded text-center border border-primary border-opacity-25">
+                                                <i
+                                                    class="bi bi-person-standing fs-4 text-primary mb-2 d-block"></i>
+                                                <h6
+                                                    class="text-dark mb-0">DIGNIDAD</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div
+                                                class="p-3 bg-primary bg-opacity-10 rounded text-center border border-primary border-opacity-25">
+                                                <i
+                                                    class="bi bi-check-circle fs-4 text-primary mb-2 d-block"></i>
+                                                <h6
+                                                    class="text-dark mb-0">COMPROMISO</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div
+                                                class="p-3 bg-primary bg-opacity-10 rounded text-center border border-primary border-opacity-25">
+                                                <i
+                                                    class="bi bi-geo-alt fs-4 text-primary mb-2 d-block"></i>
+                                                <h6
+                                                    class="text-dark mb-0">CERCANÍA</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div
+                                                class="p-3 bg-primary bg-opacity-10 rounded text-center border border-primary border-opacity-25">
+                                                <i
+                                                    class="bi bi-graph-up-arrow fs-4 text-primary mb-2 d-block"></i>
+                                                <h6
+                                                    class="text-dark mb-0">RESULTADOS</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Llamada a la acción -->
+                    <div class="row mt-5 d-none">
+                        <div class="col-12">
+                            <div
+                                class="bg-primary bg-opacity-10 p-4 rounded text-center border border-primary border-opacity-25">
+                                <h4 class="text-dark mb-3">Trabajadores al
+                                    Servicio de los Poderes del Estado de
+                                    Puebla</h4>
+                                <p class="text-muted mb-3">Organismos
+                                    Descentralizados - 61 años de servicio
+                                    sindical</p>
+                                <button class="btn btn-primary px-4 py-2">Conoce
+                                    Nuestras Propuestas Completas</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <span class="info-label">Doctorante:</span> Ciencias Jurídicas, Política y Gobierno
+            </section>
+
+            <!-- Propuestas Sindicales -->
+            <section id="propuestas" style="background-color: #f0f5ff;" class="d-none">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Propuestas Sindicales</h2>
+                    </div>
+                    <div class="section-subtitle">
+                        Comprometida con la mejora de las condiciones laborales
+                        y el desarrollo profesional de los
+                        trabajadores
+                    </div>
+                    <div class="proposals-grid">
+                        <div class="proposal-item fade-in">
+                            <div class="proposal-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>TITULACIÓN POR EXPERIENCIA LABORAL (ACUERDO 286
+                                DE LA SEP)</h3>
+                            <p>Promover, en coordinación con las autoridades
+                                educativas correspondientes, que los compañeros
+                                sindicalizados puedan obtener un título de
+                                licenciatura mediante la validación de saberes
+                                adquiridos a través de la experiencia laboral,
+                                conforme al Acuerdo 286 emitido por la
+                                Secretaría de Educación Pública (SEP).</p>
+                            <p><strong>Objetivo específico:</strong> Instaurar
+                                acuerdos con autoridades educativas que
+                                permitan a nuestros agremiados la obtención de
+                                un título de licenciatura mediante la
+                                validación de saberes adquiridos a través de la
+                                experiencia laboral, conforme al Acuerdo 286
+                                emitido por la Secretaría de Educación Pública
+                                (SEP).</p>
+                        </div>
+
+                        <div class="proposal-item fade-in">
+                            <div class="proposal-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>ACCESO A PUESTOS DIRECTIVOS PARA PERSONAL CON
+                                PREPARACIÓN ACADÉMICA DE MAESTRÍA Y DOCTORADO
+                            </h3>
+                            <p><strong>LIDERAZGO BASADO EN LA EXPERIENCIA
+                                    ACADÉMICA Y ALTA
+                                    ESPECIALIZACIÓN</strong></p>
+                            <p>Impulsar ante las instancias competentes la
+                                promoción del personal sindicalizado que cuente
+                                con el perfil académico, profesional y laboral
+                                necesario, para que puedan aspirar y ser
+                                considerados en procesos de selección para
+                                ocupar puestos directivos dentro de la
+                                administración pública estatal.</p>
+                            <p><strong>Objetivo específico:</strong> Promover
+                                ante las instancias competentes la promoción
+                                del personal sindicalizado que cuente con el
+                                perfil académico de posgrado (Maestría y
+                                Doctorado) y profesional necesario para ser
+                                candidato a puestos directivos de la
+                                Administración Pública Estatal.</p>
+                        </div>
+
+                        <div class="proposal-item fade-in">
+                            <div class="proposal-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h3>RECONOCIMIENTO DOCUMENTAL Y ECONÓMICO POR LA
+                                FORMACIÓN ACADÉMICA</h3>
+                            <p>Proponer que se otorgue un reconocimiento formal
+                                y económico a los trabajadores
+                                sindicalizados que hayan alcanzado niveles
+                                superiores de formación académica, con el fin de
+                                incentivar el desarrollo profesional y valorar
+                                la preparación continua del personal.</p>
+                            <p><strong>Objetivo específico:</strong> Gestionar
+                                el otorgamiento de un reconocimiento formal y
+                                económico a los trabajadores sindicalizados que
+                                hayan alcanzado niveles altos de formación
+                                académica, con el fin de impulsar el desarrollo
+                                profesional y valorar la preparación
+                                continua del personal.</p>
+                        </div>
+
+                        <div class="proposal-item fade-in">
+                            <div class="proposal-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3>OTORGAMIENTO DE VIVIENDA AL PERSONAL
+                                SINDICALIZADO</h3>
+                            <p>Gestionar ante las autoridades estatales y
+                                organismos de vivienda, programas y mecanismos
+                                que
+                                permitan facilitar el acceso a vivienda digna
+                                para el personal sindicalizado, ya sea
+                                mediante subsidios, créditos preferenciales o
+                                participación en proyectos habitacionales.</p>
+                            <p><strong>Objetivo específico:</strong> Gestionar
+                                acuerdos con autoridades estatales y
+                                organismos de vivienda, para implementar
+                                programas que faciliten el acceso a vivienda
+                                digna
+                                al personal sindicalizado, mediante subsidios,
+                                créditos preferenciales e incorporación a
+                                proyectos habitacionales.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <footer id="contacto">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="LOGO (1).png" alt="Logo Dolores Muñoz"
+                            style="width: 1.8rem; height: 1.8rem;"> Dolores
+                        Muñoz
+                    </div>
+                    <div class="copyright">
+                        <p>Dolores Muñoz Vázquez - Reconstrucción Sindical ©
+                            2025</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </footer>
 
-        <!-- Propuestas Sindicales -->
-        <section id="propuestas" class="section">
-            <h2>Propuestas Sindicales</h2>
-            <div class="proposals-grid">
-                <div class="proposal-item">
-                    <div class="proposal-icon">🎓</div>
-                    <h3>Titulación por experiencia laboral (Acuerdo 286 de la SEP)</h3>
-                    <p>Promover, en coordinación con las autoridades educativas correspondientes, que los compañeros sindicalizados puedan obtener un título de licenciatura mediante la validación de saberes adquiridos a través de la experiencia laboral, conforme al Acuerdo 286 emitido por la Secretaría de Educación Pública (SEP).</p>
-                </div>
-                
-                <div class="proposal-item">
-                    <div class="proposal-icon">📈</div>
-                    <h3>Acceso a puestos directivos para personal con preparación académica de Maestría y Doctorado</h3>
-                    <p>Impulsar ante las instancias competentes la promoción del personal sindicalizado que cuente con el perfil académico, profesional y laboral necesario, para que puedan aspirar y ser considerados en procesos de selección para ocupar puestos directivos dentro de la administración pública estatal.</p>
-                </div>
-                
-                <div class="proposal-item">
-                    <div class="proposal-icon">💰</div>
-                    <h3>Reconocimiento documental y económico por la formación académica</h3>
-                    <p>Proponer que se otorgue un reconocimiento formal y económico a los trabajadores sindicalizados que hayan alcanzado niveles superiores de formación académica, con el fin de incentivar el desarrollo profesional y valorar la preparación continua del personal.</p>
-                </div>
-                
-                <div class="proposal-item">
-                    <div class="proposal-icon">🏠</div>
-                    <h3>Otorgamiento de vivienda al personal sindicalizado</h3>
-                    <p>Gestionar ante las autoridades estatales y organismos de vivienda, programas y mecanismos que permitan facilitar el acceso a vivienda digna para el personal sindicalizado, ya sea mediante subsidios, créditos preferenciales o participación en proyectos habitacionales.</p>
-                </div>
-            </div>
-        </section>
-    </div>
+        <script>
+        // Menú móvil
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
 
-    <footer>
-        <div class="container">
-            <p>Dolores Muñoz Vázquez - Síntesis Curricular</p>
-        </div>
-    </footer>
-</body>
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animación de elementos al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .experience-item, .proposal-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    </body>
+
 </html>
