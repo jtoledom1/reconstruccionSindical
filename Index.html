@@ -48,12 +48,13 @@
         }
 
         .container {
+            
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Navbar */
+        /* Navbar Mejorada */
         .navbar {
             background: var(--gradient-primary);
             color: white;
@@ -79,7 +80,7 @@
 
         .logo {
             font-family: "Montserrat", sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 800;
             display: flex;
             align-items: center;
@@ -93,36 +94,26 @@
 
         .nav-links {
             display: flex;
+            align-items: center;
+            justify-content: center;
             list-style: none;
             gap: 25px;
+            margin-bottom: 0;
         }
 
         .nav-links li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links li a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--turquoise);
-            transition: width 0.3s ease;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: flex;;
         }
 
         .nav-links li a:hover {
             color: var(--light-turquoise);
-        }
-
-        .nav-links li a:hover:after {
-            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .mobile-menu-btn {
@@ -132,8 +123,14 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
 
+        .mobile-menu-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
         /* Header */
         header {
             background: var(--gradient-primary);
@@ -150,7 +147,7 @@
             left: 0;
             width: 100%;
             height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23007BFF'%3E%3C/path%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23FFFFFF'%3E%3C/path%3E%3C/svg%3E");
             background-size: cover;
             background-repeat: no-repeat;
             transform: rotate(180deg);
@@ -237,6 +234,7 @@
 
         /* Secciones */
         section {
+            background-color: white;
             padding: 80px 0;
         }
 
@@ -561,7 +559,7 @@
                 height: 220px;
             }
         }
-
+            /* Responsive */
         @media (max-width: 768px) {
             .navbar .container {
                 position: relative;
@@ -598,37 +596,13 @@
 
             .nav-links li a {
                 display: block;
-                padding: 10px 0;
+                padding: 12px 0;
+                width: 100%;
             }
 
             .mobile-menu-btn {
                 display: block;
             }
-
-            .header-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .profile-image {
-                width: 180px;
-                height: 180px;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .info-grid,
-            .courses-grid,
-            .proposals-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
 
         @media (max-width: 576px) {
             .header-text h1 {
@@ -657,7 +631,7 @@
                 <i class="fas fa-hands-helping logo-icon"></i>
                 <span>Reconstrucción Sindical</span>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links" id="navLinks">
@@ -665,7 +639,7 @@
                 <li><a href="#experiencia">Experiencia</a></li>
                 <li><a href="#formacion">Formación</a></li>
                 <li><a href="#propuestas">Propuestas</a></li>
-                <li><a href="#contacto" class="cta-button" style="padding-left: 10px;padding-right: 10px;">Contacto</a></li>
+                <li><a href="#contacto" class="cta-button" >Contacto</a></li>
             </ul>
         </div>
     </nav>
