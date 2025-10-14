@@ -31,12 +31,18 @@
     <nav class="navbar">
       <div class="container">
         <div class="logo">
-          <img
-            src="LOGO (1).png"
-            alt="Logo Dolores Muñoz"
-            style="width: 1.8rem; height: 1.8rem"
-          />
-          <span>Reconstrucción Sindical</span>
+          <a
+            href="Index.html"
+            class="logo"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="LOGO (1).png"
+              alt="Logo Dolores Muñoz"
+              style="width: 1.8rem; height: 1.8rem"
+            />
+            <span>Reconstrucción Sindical</span>
+          </a>
         </div>
         <button
           class="mobile-menu-btn"
@@ -49,8 +55,8 @@
           <li><a href="#personal">Información Personal</a></li>
           <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#formacion">Formación</a></li>
-          <li><a href="#propuestas">Propuestas</a></li>
-          <li><a href="#contacto" class="cta-button">Contacto</a></li>
+          <li><a href="propuestas.html" class="cta-button">Propuestas</a></li>
+          
         </ul>
       </div>
     </nav>
@@ -62,13 +68,7 @@
           <div class="header-text">
             <h3>RENOVANDO VALORES: "PRESTACIONES, IGUALDAD Y JUSTICIA"</h3>
             <h1>DOLORES MUÑOZ VAZQUEZ</h1>
-            <p>
-              Mujer orgullosamente sindicalizada,con
-              <strong>20 años de servicio</strong> , madre, valiente, resiliente
-              y persistente en la búsqueda de alternativas que permitan brindar
-              mejores condiciones de vida a la sociedad.
-            </p>
-            <a href="#propuestas" class="cta-button">Conoce mis propuestas</a>
+            <a href="propuestas.html" class="cta-button">Conoce mis propuestas</a>
           </div>
           <div class="profile-image">
             <img src="logo.jpeg" alt="Foto de Dolores Muñoz" />
@@ -79,56 +79,53 @@
 
     <main>
       <!-- Información Personal -->
-      <section id="personal" class="py-5 bg-light">
+      <section id="personal" class="py-5 bg-white">
         <div class="container">
-          <div class="section-title text-center">
+          <div class="section-title text-center mb-5">
             <h2>Información Personal</h2>
             <p class="text-muted">
               Detalles sobre mi trayectoria y experiencia
             </p>
           </div>
-          <div class="row g-4">
-            <!-- Tarjeta 1: Año de Nacimiento -->
-            <div class="col-md-6 col-lg-3">
-              <div class="card personal-card shadow-sm border-0">
-                <div class="card-body text-center p-4">
-                  <i class="fas fa-birthday-cake info-icon text-primary"></i>
-                  <h5 class="info-label">Fecha de Nacimiento</h5>
-                  <p class="info-value">1975</p>
+
+          <div class="row justify-content-center align-items-stretch">
+            <!-- Tarjeta unificada con información -->
+            <div class="col-lg-5 col-md-6 mb-4">
+              <div class="card shadow border-0 h-100">
+                <div class="card-body p-4 d-flex flex-column">
+                  <!-- Semblanza -->
+                  <div class="mb-1">
+                    <h4 class="text-primary mb-3">Semblanza</h4>
+                    <p
+                      class="text-muted"
+                      style="text-align: justify; line-height: 1.6"
+                    >
+                      Mujer orgullosamente sindicalizada, con más de 20 años de
+                      servicio, madre, valiente, resiliente y persistente en la
+                      búsqueda de alternativas que mejoren la calidad de vida de
+                      nuestra sociedad. A lo largo de mi trayectoria sindical,
+                      me he distinguido por la defensa firme de los derechos
+                      laborales y el impulso de condiciones de trabajo justas y
+                      equitativas. Mi compromiso ha sido siempre fortalecer la
+                      representación sindical y construir espacios dignos para
+                      todas y todos los trabajadores.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Tarjeta 2: Nacionalidad -->
-            <div class="col-md-6 col-lg-3">
-              <div class="card personal-card shadow-sm border-0">
-                <div class="card-body text-center p-4">
-                  <i class="fas fa-flag info-icon text-success"></i>
-                  <h5 class="info-label">Nacionalidad</h5>
-                  <p class="info-value">Mexicana</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tarjeta 3: Experiencia Sindical -->
-            <div class="col-md-6 col-lg-3">
-              <div class="card personal-card shadow-sm border-0">
-                <div class="card-body text-center p-4">
-                  <i class="fas fa-user-tie info-icon text-warning"></i>
-                  <h5 class="info-label">Antigüedad Sindical</h5>
-                  <p class="info-value">14 años</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tarjeta 4: Años de Servicio -->
-            <div class="col-md-6 col-lg-3">
-              <div class="card personal-card shadow-sm border-0">
-                <div class="card-body text-center p-4">
-                  <i class="fas fa-user-tie info-icon text-info"></i>
-                  <h5 class="info-label">Años de Servicio</h5>
-                  <p class="info-value">20 años</p>
-                </div>
+            <!-- Imagen -->
+            <div class="col-lg-5 col-md-6 mb-4">
+              <div
+                class="h-100 d-flex align-items-center justify-content-center"
+              >
+                <img
+                  src="LogoConPersona.jpeg"
+                  alt="Logo Dolores Muñoz"
+                  class="img-fluid rounded shadow"
+                  style="width: 100%; height: 100%; object-fit: contain"
+                />
               </div>
             </div>
           </div>
@@ -141,7 +138,6 @@
             <h2>Experiencia Laboral</h2>
           </div>
           <div class="experience-grid">
-
             <div class="experience-item fade-in">
               <div class="date-range">Enero - noviembre 2018</div>
               <div class="institution">
@@ -635,119 +631,6 @@
                   Conoce Nuestras Propuestas Completas
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Propuestas Sindicales -->
-      <section id="propuestas" style="background-color: #f0f5ff" class="d-none">
-        <div class="container">
-          <div class="section-title">
-            <h2>Propuestas Sindicales</h2>
-          </div>
-          <div class="section-subtitle">
-            Comprometida con la mejora de las condiciones laborales y el
-            desarrollo profesional de los trabajadores
-          </div>
-          <div class="proposals-grid">
-            <div class="proposal-item fade-in">
-              <div class="proposal-icon">
-                <i class="fas fa-graduation-cap"></i>
-              </div>
-              <h3>
-                TITULACIÓN POR EXPERIENCIA LABORAL (ACUERDO 286 DE LA SEP)
-              </h3>
-              <p>
-                Promover, en coordinación con las autoridades educativas
-                correspondientes, que los compañeros sindicalizados puedan
-                obtener un título de licenciatura mediante la validación de
-                saberes adquiridos a través de la experiencia laboral, conforme
-                al Acuerdo 286 emitido por la Secretaría de Educación Pública
-                (SEP).
-              </p>
-              <p>
-                <strong>Objetivo específico:</strong> Instaurar acuerdos con
-                autoridades educativas que permitan a nuestros agremiados la
-                obtención de un título de licenciatura mediante la validación de
-                saberes adquiridos a través de la experiencia laboral, conforme
-                al Acuerdo 286 emitido por la Secretaría de Educación Pública
-                (SEP).
-              </p>
-            </div>
-
-            <div class="proposal-item fade-in">
-              <div class="proposal-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h3>
-                ACCESO A PUESTOS DIRECTIVOS PARA PERSONAL CON PREPARACIÓN
-                ACADÉMICA DE MAESTRÍA Y DOCTORADO
-              </h3>
-              <p>
-                <strong
-                  >LIDERAZGO BASADO EN LA EXPERIENCIA ACADÉMICA Y ALTA
-                  ESPECIALIZACIÓN</strong
-                >
-              </p>
-              <p>
-                Impulsar ante las instancias competentes la promoción del
-                personal sindicalizado que cuente con el perfil académico,
-                profesional y laboral necesario, para que puedan aspirar y ser
-                considerados en procesos de selección para ocupar puestos
-                directivos dentro de la administración pública estatal.
-              </p>
-              <p>
-                <strong>Objetivo específico:</strong> Promover ante las
-                instancias competentes la promoción del personal sindicalizado
-                que cuente con el perfil académico de posgrado (Maestría y
-                Doctorado) y profesional necesario para ser candidato a puestos
-                directivos de la Administración Pública Estatal.
-              </p>
-            </div>
-
-            <div class="proposal-item fade-in">
-              <div class="proposal-icon">
-                <i class="fas fa-money-bill-wave"></i>
-              </div>
-              <h3>
-                RECONOCIMIENTO DOCUMENTAL Y ECONÓMICO POR LA FORMACIÓN ACADÉMICA
-              </h3>
-              <p>
-                Proponer que se otorgue un reconocimiento formal y económico a
-                los trabajadores sindicalizados que hayan alcanzado niveles
-                superiores de formación académica, con el fin de incentivar el
-                desarrollo profesional y valorar la preparación continua del
-                personal.
-              </p>
-              <p>
-                <strong>Objetivo específico:</strong> Gestionar el otorgamiento
-                de un reconocimiento formal y económico a los trabajadores
-                sindicalizados que hayan alcanzado niveles altos de formación
-                académica, con el fin de impulsar el desarrollo profesional y
-                valorar la preparación continua del personal.
-              </p>
-            </div>
-
-            <div class="proposal-item fade-in">
-              <div class="proposal-icon">
-                <i class="fas fa-home"></i>
-              </div>
-              <h3>OTORGAMIENTO DE VIVIENDA AL PERSONAL SINDICALIZADO</h3>
-              <p>
-                Gestionar ante las autoridades estatales y organismos de
-                vivienda, programas y mecanismos que permitan facilitar el
-                acceso a vivienda digna para el personal sindicalizado, ya sea
-                mediante subsidios, créditos preferenciales o participación en
-                proyectos habitacionales.
-              </p>
-              <p>
-                <strong>Objetivo específico:</strong> Gestionar acuerdos con
-                autoridades estatales y organismos de vivienda, para implementar
-                programas que faciliten el acceso a vivienda digna al personal
-                sindicalizado, mediante subsidios, créditos preferenciales e
-                incorporación a proyectos habitacionales.
-              </p>
             </div>
           </div>
         </div>

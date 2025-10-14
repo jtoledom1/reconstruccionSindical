@@ -281,10 +281,6 @@
             height: 100%;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-medium);
-        }
 
         .card-icon {
             font-size: 2.5rem;
